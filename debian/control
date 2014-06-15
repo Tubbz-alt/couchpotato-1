@@ -1,0 +1,18 @@
+Source: couchpotato
+Section: net
+Priority: extra
+Maintainer: Gerik Bonaert <dev@adaxisoft.be>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Homepage: https://couchpota.to
+#Vcs-Git: git://git.debian.org/collab-maint/couchpotato.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/couchpotato.git;a=summary
+
+Package: couchpotato
+Architecture: all
+Depends: ${misc:Depends}, python
+Description: Download movies automatically.
+ Awesome PVR for usenet and torrents. Just fill in what you want to see and 
+ CouchPotato will add it to your "want to watch"-list. Every day it will search 
+ through multiple NZBs & Torrents sites, looking for the best possible match. 
+ If available, it will download it using your favorite download software.

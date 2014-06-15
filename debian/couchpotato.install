@@ -1,0 +1,4 @@
+couchpotato/* usr/share/couchpotato/couchpotato
+libs/* usr/share/couchpotato/libs
+CouchPotato.py usr/share/couchpotato
+version.py usr/share/couchpotato
