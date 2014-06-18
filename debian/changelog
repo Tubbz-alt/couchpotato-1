@@ -1,3 +1,9 @@
+couchpotato (0~20140616) unstable; urgency=low
+
+  * Set proper default values 
+
+ -- Gerik Bonaert <dev@adaxisoft.be>  Wed, 18 Jun 2014 17:14:19 +0000
+
 couchpotato (0~20140615) unstable; urgency=low
 
   * Initial Release.
