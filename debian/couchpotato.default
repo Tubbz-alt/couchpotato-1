@@ -2,4 +2,5 @@
 # OPTIONS: CP_HOME, CP_USER, CP_DATA, CP_PIDFILE, PYTHON_BIN, CP_OPTS, SSD_OPTS
 
 CP_HOME=
+CP_OPTS="--config_file=/etc/couchpotato/couchpotato.ini""
 CP_USER=root
