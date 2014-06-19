@@ -54,7 +54,7 @@ APP_PATH=${CP_HOME-/usr/share/couchpotato/}
 DATA_DIR=${CP_DATA-/var/lib/couchpotato}
 
 # Path to store PID file
-PID_FILE=${CP_PIDFILE-/var/run/couchpotato.pid}
+PID_FILE=${CP_PIDFILE-/var/run/couchpotato/couchpotato.pid}
 
 # path to python bin
 DAEMON=${PYTHON_BIN-/usr/bin/python}
@@ -93,6 +93,13 @@ if [ -e $PID_FILE ]; then
     fi
 fi
 
+is_running () {
+    # returns 1 when running, else 0.
+    PID=$(pgrep -f "$DAEMON_OPTS")
+    RET=$?
+    [ $RET -gt 1 ] && exit 1 || return $RET
+}
+
 case "$1" in
   start)
         echo "Starting $DESC"
@@ -100,7 +107,9 @@ case "$1" in
         ;;
   stop)
         echo "Stopping $DESC"
-        start-stop-daemon --stop --pidfile $PID_FILE --retry 15
+        if is_running; then
+            start-stop-daemon --stop --pidfile $PID_FILE --retry 15
+        fi
         ;;
 
   restart|force-reload)
